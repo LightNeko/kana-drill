@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="icon" href="assets/images/wi.svg">
+    <title>Ex6 - Kana Game</title>
+</head>
+    <main>
+        <!-- the main menu -->
+        <div id="main-menu" class="main-container container">
+            <h1 id="title">The kana game</h1>
+            <div id="hiragana-btn" class="menu-btn">Hiragana</div>
+            <div id="katakana-btn" class="menu-btn">Katakana</div>
+            <div id="clear-btn" class="menu-btn">Clear Data</div>
+            <div id="info">Best for novices</div>
+            <svg id="arrow"
+                width="50px"
+                height="50px"
+                viewBox="0 0 210 210">
+                <g transform="matrix(-1.1730263,0.36891152,0.36892262,1.172991,212.32026,-29.435291)">
+                <path
+                    style="fill:darkturquoise;stroke:darkturquoise;stroke-width:0.619452;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 122.46771,52.522714 c -6.91496,-0.207662 -15.54733,0.893427 -31.007878,3.834829 -5.553266,1.056527 -14.075701,4.307917 -20.078175,7.659946 -15.48194,8.645782 -26.946744,23.929221 -32.434671,43.238391 -1.577207,5.5494 -1.259322,5.94061 11.485096,14.12946 6.204098,3.9864 11.403381,7.31365 11.553643,7.3942 0.150413,0.0803 2.230698,-2.98148 4.122853,-5.89283 10.855745,-16.7032 25.372926,-27.328161 37.927152,-27.758482 5.86665,-0.201099 14.84269,-0.791781 21.12093,-0.750525 l 6.73288,0.04425 c 0.74716,-12.440378 -3.1673,-27.822299 -2.76266,-41.39732 -0.87344,-0.0609 -1.92892,-0.149699 -3.06771,-0.266156 -0.95305,-0.09745 -1.92348,-0.168512 -2.92763,-0.211502 -0.21967,-0.0094 -0.4408,-0.01756 -0.66386,-0.02425 z"/>
+                <path
+                    style="fill:darkturquoise;stroke:none;stroke-width:2.46425;paint-order:markers fill stroke"
+                    d="M 594.90823,258.37836 295.80604,265.19255 439.45587,2.7553647 Z"
+                    transform="matrix(-0.00762091,0.34014907,-0.29374783,-0.00882472,207.12882,-74.335506)"/>
+                </g>
+            </svg>
+        </div>
+        <!-- kana table for learning before flashcards -->
+        <div id="kana-table" class="main-container container"> 
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">あ</div>
+                    <div class="back">A</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">い</div>
+                    <div class="back">I</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">う</div>
+                    <div class="back">U</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">え</div>
+                    <div class="back">E</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">お</div>
+                    <div class="back">O</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">か</div>
+                    <div class="back">KA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">き</div>
+                    <div class="back">KI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">く</div>
+                    <div class="back">KU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">け</div>
+                    <div class="back">KE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">こ</div>
+                    <div class="back">KO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">さ</div>
+                    <div class="back">SA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">し</div>
+                    <div class="back">SHI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">す</div>
+                    <div class="back">SU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">せ</div>
+                    <div class="back">SE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">そ</div>
+                    <div class="back">SO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">た</div>
+                    <div class="back">TA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">ち</div>
+                    <div class="back">CHI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">つ</div>
+                    <div class="back">TSU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">て</div>
+                    <div class="back">TE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">と</div>
+                    <div class="back">TO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">な</div>
+                    <div class="back">NA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">に</div>
+                    <div class="back">NI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">ぬ</div>
+                    <div class="back">NU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">ね</div>
+                    <div class="back">NE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">の</div>
+                    <div class="back">NO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">は</div>
+                    <div class="back">HA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">ひ</div>
+                    <div class="back">HI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">ふ</div>
+                    <div class="back">HU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">へ</div>
+                    <div class="back">HE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">ほ</div>
+                    <div class="back">HO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">ま</div>
+                    <div class="back">MA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">み</div>
+                    <div class="back">MI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">む</div>
+                    <div class="back">MU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">め</div>
+                    <div class="back">ME</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">も</div>
+                    <div class="back">MO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">や</div>
+                    <div class="back">YA</div>
+                </div>
+                <div class="card-empty green-empty">
+                </div>
+                <div class="card blue">
+                    <div class="kana">ゆ</div>
+                    <div class="back">YU</div>
+                </div>
+                <div class="card-empty pink-empty">
+                </div>
+                <div class="card purple">
+                    <div class="kana">よ</div>
+                    <div class="back">YO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">ら</div>
+                    <div class="back">RA</div>
+                </div>
+                <div class="card green">
+                    <div class="kana">り</div>
+                    <div class="back">RI</div>
+                </div>
+                <div class="card blue">
+                    <div class="kana">る</div>
+                    <div class="back">RU</div>
+                </div>
+                <div class="card pink">
+                    <div class="kana">れ</div>
+                    <div class="back">RE</div>
+                </div>
+                <div class="card purple">
+                    <div class="kana">ろ</div>
+                    <div class="back">RO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">わ</div>
+                    <div class="back">WA</div>
+                </div>
+                <div class="card-empty green-empty">
+                </div>
+                <div class="card-empty blue-empty">
+                </div>
+                <div class="card-empty pink-empty">
+                </div>
+                <div class="card purple">
+                    <div class="kana">を</div>
+                    <div class="back">WO</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card red">
+                    <div class="kana">ん</div>
+                    <div class="back">N</div>
+                </div>
+                <div class="card-empty green-empty">
+                </div>
+                <div class="card-empty blue-empty">
+                </div>
+                <div id="back-btn" class="btn btn-info">
+                    Back
+                </div>
+                <div id="start-btn" class="btn btn-info">
+                    Start
+                </div>
+            </div>
+        </div>
+        <!-- ecercise page -->
+        <div id="drill" class="main-container container" style="float: left;">
+            <!-- Shows random kana -->
+            <div id="show-kana" class="row" data-value=""></div>
+            <!-- answer buttons -->
+            <div class="answers row">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="letter red">A</div>
+                        <div class="letter green">I</div>
+                        <div class="letter blue">U</div>
+                        <div class="letter pink">E</div>
+                        <div class="letter purple">O</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">KA</div>
+                        <div class="letter green">KI</div>
+                        <div class="letter blue">KU</div>
+                        <div class="letter pink">KE</div>
+                        <div class="letter purple">KO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">SA</div>
+                        <div class="letter green">SHI</div>
+                        <div class="letter blue">SU</div>
+                        <div class="letter pink">SE</div>
+                        <div class="letter purple">SO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">TA</div>
+                        <div class="letter green">CHI</div>
+                        <div class="letter blue">TSU</div>
+                        <div class="letter pink">TE</div>
+                        <div class="letter purple">TO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">NA</div>
+                        <div class="letter green">NI</div>
+                        <div class="letter blue">NU</div>
+                        <div class="letter pink">NE</div>
+                        <div class="letter purple">NO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">HA</div>
+                        <div class="letter green">HI</div>
+                        <div class="letter blue">FU</div>
+                        <div class="letter pink">HE</div>
+                        <div class="letter purple">HO</div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="letter red">MA</div>
+                        <div class="letter green">MI</div>
+                        <div class="letter blue">MU</div>
+                        <div class="letter pink">ME</div>
+                        <div class="letter purple">MO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">YA</div>
+                        <div class="no-letter green-empty"></div>
+                        <div class="letter blue">YU</div>
+                        <div class="no-letter pink-empty"></div>
+                        <div class="letter purple">YO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">RA</div>
+                        <div class="letter green">RI</div>
+                        <div class="letter blue">RU</div>
+                        <div class="letter pink">RE</div>
+                        <div class="letter purple">RO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">WA</div>
+                        <div class="no-letter green-empty"></div>
+                        <div class="no-letter blue-empty"></div>
+                        <div class="no-letter pink-empty"></div>
+                        <div class="letter purple">WO</div>
+                    </div>
+                    <div class="row">
+                        <div class="letter red">N</div>
+                        <div class="no-letter green-empty"></div>
+                        <div class="no-letter blue-empty"></div>
+                        <div class="no-letter pink-empty"></div>
+                        <div class="no-letter purple-empty"></div>
+                    </div>
+                    <div class="row">
+                        <div id="back-btn2">Back</div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        <!-- Ptrogress bars -->
+        <div id="stats" class="right-menu">
+            <div>
+                <div class="progress align-self-center">
+                    <div id="A" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">あ</div>
+                </div>
+                <div class="progress">
+                    <div id="I" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">い</div>
+                </div>
+                <div class="progress">
+                    <div id="U" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">う</div>
+                </div>
+                <div class="progress">
+                    <div id="E" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">え</div>
+                </div>
+                <div class="progress">
+                    <div id="O" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">お</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="KA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">か</div>
+                </div>
+                <div class="progress">
+                    <div id="KI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">き</div>
+                </div>
+                <div class="progress">
+                    <div id="KU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">く</div>
+                </div>
+                <div class="progress">
+                    <div id="KE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">け</div>
+                </div>
+                <div class="progress">
+                    <div id="KO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">こ</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="SA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">さ</div>
+                </div>
+                <div class="progress">
+                    <div id="SHI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">し</div>
+                </div>
+                <div class="progress">
+                    <div id="SU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">す</div>
+                </div>
+                <div class="progress">
+                    <div id="SE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">せ</div>
+                </div>
+                <div class="progress">
+                    <div id="SO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">そ</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="TA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">た</div>
+                </div>
+                <div class="progress">
+                    <div id="CHI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">ち</div>
+                </div>
+                <div class="progress">
+                    <div id="TSU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">つ</div>
+                </div>
+                <div class="progress">
+                    <div id="TE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">て</div>
+                </div>
+                <div class="progress">
+                    <div id="TO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">と</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="NA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">な</div>
+                </div>
+                <div class="progress">
+                    <div id="NI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">に</div>
+                </div>
+                <div class="progress">
+                    <div id="NU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">ぬ</div>
+                </div>
+                <div class="progress">
+                    <div id="NE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">ね</div>
+                </div>
+                <div class="progress">
+                    <div id="NO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">の</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="HA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">は</div>
+                </div>
+                <div class="progress">
+                    <div id="HI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">ひ</div>
+                </div>
+                <div class="progress">
+                    <div id="FU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">ふ</div>
+                </div>
+                <div class="progress">
+                    <div id="HE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">へ</div>
+                </div>
+                <div class="progress">
+                    <div id="HO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">ほ</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="MA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">ま</div>
+                </div>
+                <div class="progress">
+                    <div id="MI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">み</div>
+                </div>
+                <div class="progress">
+                    <div id="MU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">む</div>
+                </div>
+                <div class="progress">
+                    <div id="ME" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">め</div>
+                </div>
+                <div class="progress">
+                    <div id="MO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">も</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="YA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">や</div>
+                </div>
+                <div class="progress">
+                    <div id="YU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">ゆ</div>
+                </div>
+                <div class="progress">
+                    <div id="YO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255)" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">よ</div>
+                </div>
+                <div class="progress">
+                    <div id="RA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">ら</div>
+                </div>
+                <div class="progress">
+                    <div id="RI" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(20,200, 20);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">り</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="RU" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(0, 89, 255);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">る</div>
+                </div>
+                <div class="progress">
+                    <div id="RE" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(255, 137, 245);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">れ</div>
+                </div>
+                <div class="progress">
+                    <div id="RO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">ろ</div>
+                </div>
+                <div class="progress">
+                    <div id="WA" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">わ</div>
+                </div>
+                <div class="progress">
+                    <div id="WO" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(140, 0, 255);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">を</div>
+                </div>
+                <div class="progress align-self-center">
+                    <div id="N" class="progress-bar progress-bar-striped progress-bar-animated text-left" role="progressbar" style="width: 0%; background-color: rgb(220, 20, 20);" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">ん</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <footer class="container-fluid">
+        <div>Nicola Zanetti - Volée Baldur</div>
+        <div>Licence <a href="https://creativecommons.org/choose/?lang=fr">Creative Commons</a></div>
+        <div>Made with: <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://www.javascripting.com/view/probability-js">Probability.js</a> and <a href="https://fonts.google.com/">Google Fonts</a></div>
+    </footer>
+    <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/probability.js"></script>
+    <script src="assets/js/dictionary.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

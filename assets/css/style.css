@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kiwi Maru', serif;
+}
+
+header {
+    border: solid red 5px;
+}
+
+main {
+    height: 800px;
+    border: solid darkcyan 5px;
+    background-color: lightcyan;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 116px;
+    color: cornsilk;
+    background-color: darkslategrey;
+}
+
+#title {
+    position: relative;
+    height: 50px;
+    border-radius: 20px;
+    color: darkturquoise;
+    font-size: 5rem;
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.main-container{
+    float: left;
+    max-width: 600px;
+    height: 790px;
+    background-color: paleturquoise;
+    border: dashed darkturquoise 12.5px;
+    border-radius: 5%;
+}
+
+#show-kana {
+    background-color: white;
+}
+
+.right-menu {
+    position: relative;
+    left: 19px;
+    background-color: lightcyan;
+    width: 320px;
+    height: 790px;
+    overflow:scroll;
+    overflow-x: hidden;
+    scrollbar-color: darkturquoise paleturquoise ;
+}
+
+.progress {
+    margin: 5px;
+    background-color: paleturquoise;
+    border: dashed turquoise 1px;
+    user-select: none;
+}
+
+.prog-index {
+    font-size: 0.62rem;
+    padding: 0.2px;
+}
+
+#show-kana {
+    width: 341px;
+    height: 400px;
+    font-size: 10rem;
+    justify-content: center;
+    line-height: 350px;
+    margin: 30px auto;
+    border: solid orange 2px;
+    border-radius: 20%;
+    user-select: none;
+}
+
+.answers {
+    height: 300px;
+    width: 474px;
+    margin: 5px auto;
+    border: dotted turquoise 3px;
+    border-radius: 5%;
+    padding-left: 32px;
+}
+
+.letter {
+    height: 46px;
+    width: 33px;
+    margin: 1.5px;
+    border-radius: 20%;
+    text-align: center;
+    font-size: 0.96rem;
+    line-height: 41px;
+    background-color: white;
+    margin-bottom: 1.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.no-letter {
+    height: 46px;
+    width: 33px;
+    margin: 1.5px;
+    border-radius: 20%;
+    border: dashed rgb(0, 89, 255) 1px;
+}
+
+.card {
+    height: 64.8px;
+    width: 80px;
+    left: 78px;
+    margin: 2px;
+    border-radius: 20%;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 53px; 
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: default;
+    user-select: none;
+}
+
+.card-empty {
+    position: relative;
+    height: 64.8px;
+    width: 80px;
+    left: 78px;
+    margin: 2px;
+    border-radius: 20%;
+    text-align: center;
+    line-height: 26px;
+}
+
+.btn {
+    position: relative;
+    left: 78px;
+    color: #2a4e6c;
+    font-size: 1.2rem;
+    line-height: 38px;
+    margin: 2px;
+}
+
+.btn-info {
+    background-color: darkturquoise;
+    height: 64.8px;
+    width: 80px;
+    border: ridge steelblue 6px;;
+    border-radius: 20%;
+}
+
+.menu-btn {
+    position: relative;
+    top: 500px;
+    width: 200px;
+    height: 50px;
+    color: darkturquoise;
+    border: dashed darkturquoise 3px;
+    border-radius: 20px;
+    font-size: 2rem;
+    line-height: 35px;
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-btn:hover {
+    background-color: white;
+}
+
+#back-btn2 {
+    height: 46px;
+    width: 176px;
+    margin: 1.5px;
+    border-radius: 20%;
+    text-align: center;
+    font-size: 0.96rem;
+    line-height: 41px;
+    color: darkturquoise;
+    background-color: paleturquoise;
+    border: dashed darkturquoise 3px;
+    margin-bottom: 1.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#back-btn2:hover {
+    background-color: white;
+}
+
+#clear-btn {
+    color: red; 
+    border: dashed red 3px;
+}
+
+#info {
+    position: relative;
+    top: 310px;
+    left: 375px;
+    width: 200px;
+    color: darkturquoise;
+    border-radius: 20px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#arrow {
+    position: relative;
+    left: 370px;
+    top: 240px;
+}
+.card:hover {
+    transform: rotateY(180deg);
+
+  }
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front {
+    color: black;
+}
+
+.back {
+    background-color: white;
+    transform: rotateY(180deg);
+    border-radius: 20%;
+    font-size: 2rem;
+    line-height: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+.red {
+    border: solid red 2px;
+}
+
+.red:hover {
+    background-color: rgb(255, 195, 195);
+}
+
+.red:hover .back {
+    background-color: rgb(255, 195, 195);
+}
+
+.red-empty {
+    border: dashed red 1px;
+}
+
+.green {
+    border: solid rgb(0, 255, 0) 2px;
+}
+
+.green:hover {
+    background-color: rgb(195, 255, 195);
+}
+
+.green:hover .back {
+    background-color: rgb(195, 255, 195);
+}
+
+.green-empty {
+    border: dashed rgb(0, 255, 0) 1px;
+}
+
+.blue {
+    border: solid rgb(0, 89, 255) 2px;
+}
+
+.blue:hover {
+    background-color: rgb(195, 216, 255);
+}
+
+.blue:hover .back {
+    background-color: rgb(195, 216, 255);
+}
+
+.blue-empty {
+    border: dashed rgb(0, 89, 255) 1px;
+}
+
+.pink {
+    border: solid rgb(255, 137, 245) 2px;
+}
+
+.pink:hover {
+    background-color: rgb(255, 221, 252);
+}
+
+.pink:hover .back {
+    background-color: rgb(255, 221, 252);
+}
+
+.pink-empty {
+    border: dashed rgb(255, 137, 245) 1px;
+}
+
+.purple {
+    border: solid rgb(140, 0, 255) 2px;
+}
+
+.purple:hover {
+    background-color: rgb(228, 195, 255);
+}
+
+.purple:hover .back {
+    background-color: rgb(228, 195, 255);
+}
+
+.purple-empty {
+    border: dashed rgb(140, 0, 255) 1px;
+}
